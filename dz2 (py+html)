@@ -1,0 +1,79 @@
+#app.py
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/blog')
+def blog():
+    return render_template('blog.html')
+
+@app.route('/contacts')
+def contacts():
+    return render_template('contacts.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+#index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Добро пожаловать на главную страницу!</h1>
+    <p>Это главная страница нашего сайта.</p>
+    <nav>
+        <a href="/">Главная</a> |
+        <a href="/blog">Блог</a> |
+        <a href="/contacts">Контакты</a>
+    </nav>
+</body>
+</html>
+
+#blog.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Наш блог</h1>
+    <p>Здесь вы можете найти последние новости и статьи.</p>
+    <nav>
+        <a href="/">Главная</a> |
+        <a href="/blog">Блог</a> |
+        <a href="/contacts">Контакты</a>
+    </nav>
+</body>
+</html>
+
+#contacts.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Свяжитесь с нами</h1>
+    <p>Это страница с контактной информацией.</p>
+    <nav>
+        <a href="/">Главная</a> |
+        <a href="/blog">Блог</a> |
+        <a href="/contacts">Контакты</a>
+    </nav>
+</body>
+</html>
